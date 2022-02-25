@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Getting Started: Serving Web Content</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href = "@{/css/bootstrap.min.css}" rel = "stylesheet">
+    <script type="text/javascript" th:src = "@{/js/actions.js}"></script>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <th align="center">Ticket Price Id</th>
+        <th align="center">Base Price</th>
+        <th align="center">Ticket Type</th>
+        <th align="center">Pricing Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="ticketPrice : ${ticketPrices}">
+        <td th:text="${ticketPrice.ticketPriceId}"></td>
+        <td th:text="${ticketPrice.basePrice}"></td>
+        <td th:text="${ticketPrice.ticketType.ticketTypeCode}"></td>
+        <td th:text="${ticketPrice.pricingCategory.pricingCategoryCode}"></td>
+    </tr>
+    </tbody>
+</table>
+
+</body>
+</html>
